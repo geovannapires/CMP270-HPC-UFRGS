@@ -41,7 +41,7 @@ __global__ void calcForces(float *px, float *py, float *pz,
 Para cada versão, calcular e plotar:
 
 - **Speedup:** S(p) = T(1) / T(p)
-- **Eficiência:** E(p) = S(p) / p *(para MPI e OpenMP)*
+<!-- - **Eficiência:** E(p) = S(p) / p *(para MPI e OpenMP)* -->
 - Para HIP: discutir o impacto do tamanho do bloco e do overhead de transferência host↔device
 
 Discutir brevemente por que a eficiência cai com mais processos/threads (Lei de Amdahl) e em que situações a GPU supera ou não a CPU.
@@ -52,8 +52,8 @@ Discutir brevemente por que a eficiência cai com mais processos/threads (Lei de
 
 | Versão  | Padrão                  | Mecanismo                        |
 |---------|-------------------------|----------------------------------|
-| MPI     | Geometric Decomposition | `MPI_Allgather`, `MPI_Reduce`    |
-| OpenMP  | Loop Parallelism        | `omp parallel for reduction`     |
+<!-- | MPI     | Geometric Decomposition | `MPI_Allgather`, `MPI_Reduce`    |
+| OpenMP  | Loop Parallelism        | `omp parallel for reduction`     | -->
 | HIP     | Data Parallelism        | kernel, `blockDim`, `gridDim`    |
 
 ---
@@ -66,7 +66,7 @@ Sim e não — depende do nível de análise.
 
 **Mas há complicações reais** que tornam a paralelização menos trivial do que parece:
 
-- **Dependência global de dados.** Ao final de cada passo de tempo, todo processo precisa conhecer as posições de *todas* as partículas para o passo seguinte. Isso exige um `MPI_Allgather` global — uma comunicação coletiva cujo custo cresce com o número de processos e pode se tornar o gargalo dominante.
+- **Dependência global de dados.** Ao final de cada passo de tempo, todo processo precisa conhecer as posições de *todas* as partículas para o passo seguinte. <!-- Isso exige um `MPI_Allgather` global — uma comunicação coletiva cujo custo cresce com o número de processos e pode se tornar o gargalo dominante. -->
 
 - **Balanceamento de carga.** Na versão O(N²) com distribuição uniforme de partículas, o balanceamento é simples. Mas se o domínio for espacialmente não-uniforme (partículas agrupadas em clusters), alguns processos ficam sobrecarregados.
 
