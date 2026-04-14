@@ -77,6 +77,8 @@ Sim e não — depende do nível de análise.
 Em resumo: é um problema **fácil de paralelizar na primeira versão**, mas **difícil de paralelizar bem** — o que o torna pedagogicamente muito rico, pois expõe exatamente os conceitos centrais da CMP270.
 
 ---
+## Adicionais feitos ao longo da pesquisa
+- **14/04:** Simplificar e incluir um conceito de didática e ensino, buscando um teor de introdução à parelização de aplicações. Assim, facilitando a compreensão do processo de adaptação de algoritmos sequenciais para ambientes de alto desempenho.
 
 ## Bibliografia
 
