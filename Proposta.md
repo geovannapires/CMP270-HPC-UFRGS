@@ -1,6 +1,6 @@
 # Trabalho Final — CMP270: Introduction to High Performance Computing
 
-**Título:** Paralelização do Problema N-Corpos com MPI, OpenMP e HIP
+**Título:** Paralelização do Problema N-Corpos com HIP
 
 ---
 
