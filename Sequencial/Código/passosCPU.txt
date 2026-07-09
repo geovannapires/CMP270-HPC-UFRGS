@@ -1,0 +1,11 @@
+Passo 1:
+Rodar makefile
+comando: make
+
+Passo 2:
+dar permissão para sh
+chmod +x "nome_arquivo".sh
+
+Passo 3:
+Rodar .sh
+./"nome_arquivo.sh"
